@@ -9,7 +9,7 @@ public class Conjured extends Item{
     public void updateQuality() {
         this.sellIn--;
         if(this.quality > 0){
-            if(this.sellIn < 0){
+            if(this.isExpired()){
                 this.quality -= 4;
             }
             else {

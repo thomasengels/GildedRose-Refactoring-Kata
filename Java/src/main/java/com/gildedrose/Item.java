@@ -18,12 +18,16 @@ public class Item {
         if(quality <= 0){
             return;
         }
-        if(sellIn < 0){
+        if(this.isExpired()){
             this.quality -= 2;
         }
         else {
             this.quality--;
         }
+    }
+
+    protected boolean isExpired(){
+        return this.sellIn < 0;
     }
 
     @Override
