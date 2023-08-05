@@ -5,7 +5,7 @@ public class ItemFactory {
         if(name.toLowerCase().contains("conjured")){
             return new Conjured(name, sellIn, quality);
         }
-        else if(name.toLowerCase().contains("backstagepass")){
+        else if(name.toLowerCase().contains("Backstage passes".toLowerCase())){
             return new BackStagePass(name, sellIn, quality);
         }
         else if (name.toLowerCase().contains("agedbrie")){
