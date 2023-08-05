@@ -1,20 +1,19 @@
 package com.gildedrose;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@AllArgsConstructor
+@Data
 public class Item {
 
-    public String name;
+    String name;
 
-    public int sellIn;
+    int sellIn;
 
-    public int quality;
+    int quality;
 
-    public Item(String name, int sellIn, int quality) {
-        this.name = name;
-        this.sellIn = sellIn;
-        this.quality = quality;
-    }
-
-   @Override
+    @Override
    public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
