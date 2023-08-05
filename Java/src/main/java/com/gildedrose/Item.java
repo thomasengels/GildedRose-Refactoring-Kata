@@ -15,13 +15,14 @@ public class Item {
 
     void updateQuality(){
         sellIn--;
-        if(quality > 0){
-            if(sellIn < 0){
-                this.quality -= 2;
-            }
-            else {
-                this.quality--;
-            }
+        if(quality <= 0){
+            return;
+        }
+        if(sellIn < 0){
+            this.quality -= 2;
+        }
+        else {
+            this.quality--;
         }
     }
 
