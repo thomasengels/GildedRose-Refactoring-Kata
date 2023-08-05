@@ -57,4 +57,19 @@ class BackStagePassTest {
         assertEquals(4, pass.sellIn);
         assertEquals(90, pass.quality);
     }
+
+    @Test
+    void whenSellInIsNegativeQualityIs0(){
+        //given
+        BackStagePass pass = new BackStagePass("rammstein",0,10);
+        assertEquals(0, pass.sellIn);
+        assertEquals(10, pass.quality);
+
+        //when
+        pass.updateQuality();
+
+        //then
+        assertEquals(-1, pass.sellIn);
+        assertEquals(0, pass.quality);
+    }
 }
