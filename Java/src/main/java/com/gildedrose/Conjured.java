@@ -7,7 +7,7 @@ public class Conjured extends Item{
 
     @Override
     public void updateQuality() {
-        this.sellIn--;
+        this.dayHasPassed();
         if(this.quality > 0){
             if(this.isExpired()){
                 this.quality -= 4;

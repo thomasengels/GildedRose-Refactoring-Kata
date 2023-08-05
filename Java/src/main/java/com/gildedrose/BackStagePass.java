@@ -7,7 +7,7 @@ public class BackStagePass extends Item{
 
     @Override
     public void updateQuality() {
-        this.sellIn--;
+        this.dayHasPassed();
         if(this.sellIn > 10){
            this.quality++;
         }

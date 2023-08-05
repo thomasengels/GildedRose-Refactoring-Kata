@@ -14,7 +14,7 @@ public class Item {
     int quality;
 
     void updateQuality(){
-        sellIn--;
+        dayHasPassed();
         if(quality <= 0){
             return;
         }
@@ -24,6 +24,10 @@ public class Item {
         else {
             this.quality--;
         }
+    }
+
+    protected void dayHasPassed() {
+        this.sellIn--;
     }
 
     protected boolean isExpired(){
