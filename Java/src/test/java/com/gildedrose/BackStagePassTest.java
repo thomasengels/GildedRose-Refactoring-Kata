@@ -8,15 +8,15 @@ class BackStagePassTest {
     @Test
     void whenSellInIsHigherThen10QualityIncreaseByOne(){
         //given
-        BackStagePass pass = new BackStagePass("rammstein",11,10);
-        assertEquals(11, pass.sellIn);
+        BackStagePass pass = new BackStagePass("rammstein",12,10);
+        assertEquals(12, pass.sellIn);
         assertEquals(10, pass.quality);
 
         //when
         pass.updateQuality();
 
         //then
-        assertEquals(10, pass.sellIn);
+        assertEquals(11, pass.sellIn);
         assertEquals(11, pass.quality);
     }
 }
