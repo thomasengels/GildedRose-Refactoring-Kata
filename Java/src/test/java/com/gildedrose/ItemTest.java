@@ -86,4 +86,18 @@ class ItemTest {
         //then
         assertEquals(-1, item.sellIn);
     }
+
+    @Test
+    void whenItemIsFirstDayOfExpirationAndQualityWas1ThenQualityIs0(){
+        //given
+        int sellIn = 0;
+        Item item = new Item("item", sellIn, 1);
+        assertEquals(1, item.quality);
+
+        //when
+        item.updateQuality();
+
+        //then
+        assertEquals(0, item.quality);
+    }
 }

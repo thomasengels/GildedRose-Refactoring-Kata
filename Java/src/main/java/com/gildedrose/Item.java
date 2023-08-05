@@ -15,7 +15,11 @@ public class Item {
 
     void updateQuality(){
         dayHasPassed();
-        if(quality <= 0){
+        if(this.quality <= 0){
+            return;
+        }
+        if(this.quality == 1){
+            quality = 0;
             return;
         }
         if(this.isExpired()){
@@ -36,6 +40,6 @@ public class Item {
 
     @Override
    public String toString() {
-        return this.name + ", " + this.sellIn + ", " + this.quality;
+        return this.name + ", " + this.sellIn + ", Quality " + this.quality;
     }
 }
