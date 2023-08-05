@@ -13,6 +13,18 @@ public class Item {
 
     int quality;
 
+    void updateQuality(){
+        sellIn--;
+        if(quality > 0){
+            if(sellIn < 0){
+                this.quality -= 2;
+            }
+            else {
+                this.quality--;
+            }
+        }
+    }
+
     @Override
    public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
