@@ -7,7 +7,7 @@ public class AgedBrie extends Item {
 
     @Override
     void updateQuality() {
-        this.sellIn--;
+        this.dayHasPassed();
         this.quality++;
     }
 }
