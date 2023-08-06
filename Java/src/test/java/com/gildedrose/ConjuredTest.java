@@ -72,6 +72,19 @@ class ConjuredTest {
         assertEquals(8, conjured.sellIn);
     }
 
+    @Test
+    void whenExpirationDateIsMetAndQualityWasLowerThen2ThenQualityIs0(){
+        //given
+        int sellIn = 0;
+        Conjured conjured = new Conjured("conjured", sellIn, 1);
+
+        //when
+        conjured.updateQuality();
+
+        //then
+        assertEquals(0, conjured.quality);
+    }
+
 
     @Test
     void sellInCanBeNegative() {
