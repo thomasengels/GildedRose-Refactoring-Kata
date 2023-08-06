@@ -10,6 +10,5 @@ public class Sulfuras extends Item{
 
     @Override
     void updateQuality() {
-        this.dayHasPassed();
     }
 }

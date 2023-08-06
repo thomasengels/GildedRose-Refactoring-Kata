@@ -17,6 +17,6 @@ class SulfurasTest {
 
         //then
         assertEquals(80, sulfuras.quality);
-        assertEquals(9, sulfuras.sellIn);
+        assertEquals(10, sulfuras.sellIn);
     }
 }
