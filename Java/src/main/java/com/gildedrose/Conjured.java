@@ -8,13 +8,12 @@ public class Conjured extends Item{
     @Override
     public void updateQuality() {
         this.dayHasPassed();
-        if(this.quality > 0){
-            if(this.isExpired()){
-                this.quality -= 4;
-            }
-            else {
-                this.quality -= 2;
-            }
+        if(this.isExpired()){
+            this.quality = Math.max(0, this.quality - 4);
+
+        }
+        else {
+            this.quality = Math.max(0, this.quality - 2);
         }
     }
 }
