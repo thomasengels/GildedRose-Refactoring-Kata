@@ -1,19 +1,14 @@
 package com.gildedrose;
 
-public class Conjured extends Item{
-    public Conjured(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
-    }
-
+public class Conjured implements Updatable {
     @Override
-    public void updateQuality() {
-        this.dayHasPassed();
-        if(this.isExpired()){
-            this.quality = Math.max(0, this.quality - 4);
+    public int updateQuality(int currentQuality, int sellIn) {
+        if(sellIn < 0){
+            return Math.max(0, currentQuality - 4);
 
         }
         else {
-            this.quality = Math.max(0, this.quality - 2);
+            return Math.max(0, currentQuality - 2);
         }
     }
 }

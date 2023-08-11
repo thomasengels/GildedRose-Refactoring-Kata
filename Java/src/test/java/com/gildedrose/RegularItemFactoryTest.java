@@ -4,13 +4,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class ItemFactoryTest {
+class RegularItemFactoryTest {
     @Test
     void whenNameContainsAgedBrieReturnAgedBrieInstance(){
         //given
         String name = "AgedBrie";
         //when
-        Item item = new ItemFactory().buildItem(name, 10,10);
+        Updatable item = new UpdatableFactory().buildUpdater(name);
 
         //then
         assertEquals(AgedBrie.class, item.getClass());
@@ -21,7 +21,7 @@ class ItemFactoryTest {
         //given
         String name = "Sulfuras";
         //when
-        Item item = new ItemFactory().buildItem(name, 10,10);
+        Updatable item = new UpdatableFactory().buildUpdater(name);
 
         //then
         assertEquals(Sulfuras.class, item.getClass());
@@ -30,9 +30,9 @@ class ItemFactoryTest {
     @Test
     void whenNameContainsBackStagePassReturnBackstagePassInstance(){
         //given
-        String name = "Backstagepass";
+        String name = "Backstage passes";
         //when
-        Item item = new ItemFactory().buildItem(name, 10,10);
+        Updatable item = new UpdatableFactory().buildUpdater(name);
 
         //then
         assertEquals(BackStagePass.class, item.getClass());
@@ -43,7 +43,7 @@ class ItemFactoryTest {
         //given
         String name = "conjured";
         //when
-        Item item = new ItemFactory().buildItem(name, 10,10);
+        Updatable item = new UpdatableFactory().buildUpdater(name);
 
         //then
         assertEquals(Conjured.class, item.getClass());
@@ -54,9 +54,9 @@ class ItemFactoryTest {
         //given
         String name = "cookie";
         //when
-        Item item = new ItemFactory().buildItem(name, 10,10);
+        Updatable item = new UpdatableFactory().buildUpdater(name);
 
         //then
-        assertEquals(Item.class, item.getClass());
+        assertEquals(RegularItem.class, item.getClass());
     }
 }

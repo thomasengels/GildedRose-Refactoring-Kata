@@ -10,6 +10,6 @@ class GildedRose {
     }
 
     public void updateQuality() {
-        Arrays.asList(items).forEach(Item::updateQuality);
+        Arrays.asList(items).forEach(Item::update);
     }
 }

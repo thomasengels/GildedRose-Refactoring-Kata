@@ -8,15 +8,12 @@ class AgedBrieTest {
    @Test
    void qualityIncreasesWhenSellInDecreases(){
        //given
-       AgedBrie agedBrie = new AgedBrie("brie", 10, 10);
-       assertEquals(10, agedBrie.sellIn);
-       assertEquals(10, agedBrie.quality);
+       AgedBrie agedBrie = new AgedBrie();
 
        //when
-       agedBrie.updateQuality();
+       int quality = agedBrie.updateQuality(10, 9);
 
        //then
-       assertEquals(9, agedBrie.sellIn);
-       assertEquals(11, agedBrie.quality);
+       assertEquals(11, quality);
    }
 }

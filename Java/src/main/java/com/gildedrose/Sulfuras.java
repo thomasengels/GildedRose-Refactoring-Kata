@@ -1,14 +1,14 @@
 package com.gildedrose;
 
-public class Sulfuras extends Item{
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+public class Sulfuras implements Updatable {
 
     private static final int SULFURAS_QUALITY = 80;
 
-    public Sulfuras(String name, int sellIn) {
-        super(name, sellIn, SULFURAS_QUALITY);
-    }
-
     @Override
-    void updateQuality() {
+    public int updateQuality(int currentQuality, int sellIn) {
+        return SULFURAS_QUALITY;
     }
 }

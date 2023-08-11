@@ -1,24 +1,25 @@
 package com.gildedrose;
 
-public class BackStagePass extends Item{
-    public BackStagePass(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
-    }
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
+public class BackStagePass implements Updatable {
     @Override
-    public void updateQuality() {
-        this.dayHasPassed();
-        if(this.sellIn > 10){
-           this.quality++;
+    public int updateQuality(int currentQuality, int sellIn) {
+        int newQuality;
+        if(sellIn > 10){
+            newQuality = ++currentQuality;
         }
-        else if(this.sellIn > 5){
-            this.quality *= 2;
+        else if(sellIn > 5){
+            newQuality = currentQuality * 2;
         }
-        else if(this.sellIn >= 0){
-            this.quality *= 3;
+        else if(sellIn >= 0){
+            newQuality = currentQuality * 3;
         }
         else {
-            this.quality = 0;
+            newQuality = 0;
         }
+
+        return newQuality;
     }
 }

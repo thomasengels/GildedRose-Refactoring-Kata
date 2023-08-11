@@ -8,81 +8,66 @@ class BackStagePassTest {
     @Test
     void whenSellInIsHigherThen10QualityIncreaseByOne(){
         //given
-        BackStagePass pass = new BackStagePass("rammstein",12,10);
-        assertEquals(12, pass.sellIn);
-        assertEquals(10, pass.quality);
+        BackStagePass pass = new BackStagePass();
 
         //when
-        pass.updateQuality();
+        int quality = pass.updateQuality(10, 11);
 
         //then
-        assertEquals(11, pass.sellIn);
-        assertEquals(11, pass.quality);
+        assertEquals(11, quality);
     }
 
     @Test
     void whenSellInIsHigherThen5QualityIncreasesByFactor2(){
         //given
-        BackStagePass pass = new BackStagePass("rammstein",11,10);
-        assertEquals(11, pass.sellIn);
-        assertEquals(10, pass.quality);
+        BackStagePass pass = new BackStagePass();
 
         //when
-        pass.updateQuality();
+        int quality = pass.updateQuality(10, 10);
 
         //then
-        assertEquals(10, pass.sellIn);
-        assertEquals(20, pass.quality);
+        assertEquals(20, quality);
 
-        pass.updateQuality();
-        assertEquals(9, pass.sellIn);
-        assertEquals(40, pass.quality);
+        quality = pass.updateQuality(quality, 9);
+        assertEquals(40, quality);
     }
 
     @Test
-    void whenSellInIsLowerThen6And0OrHigherQualityIncreasesByFactor3(){
+    void whenSellInIsBetween0And6QualityIncreasesByFactor3(){
         //given
-        BackStagePass pass = new BackStagePass("rammstein",6,10);
-        assertEquals(6, pass.sellIn);
-        assertEquals(10, pass.quality);
+        BackStagePass pass = new BackStagePass();
 
         //when
-        pass.updateQuality();
+        int quality = pass.updateQuality(10, 5);
 
         //then
-        assertEquals(5, pass.sellIn);
-        assertEquals(30, pass.quality);
+        assertEquals(30, quality);
 
-        pass.updateQuality();
-        assertEquals(4, pass.sellIn);
-        assertEquals(90, pass.quality);
+        quality = pass.updateQuality(quality, 4);
+        assertEquals(90, quality);
     }
 
     @Test
     void whenSellInIsNegativeQualityIs0(){
         //given
-        BackStagePass pass = new BackStagePass("rammstein",0,10);
-        assertEquals(0, pass.sellIn);
-        assertEquals(10, pass.quality);
+        BackStagePass pass = new BackStagePass();
 
         //when
-        pass.updateQuality();
+        int quality = pass.updateQuality(10, -1);
 
         //then
-        assertEquals(-1, pass.sellIn);
-        assertEquals(0, pass.quality);
+        assertEquals(0, quality);
     }
 
     @Test
     void qualityCanNeverBeNegative(){
         //given
-        BackStagePass pass = new BackStagePass("rammstein",-1,10);
+        BackStagePass pass = new BackStagePass();
 
         //when
-        pass.updateQuality();
+        int quality = pass.updateQuality(10, -1);
 
         //then
-        assertEquals(-2, pass.sellIn);
-        assertEquals(0, pass.quality);
+        assertEquals(0, quality);
     }
 }

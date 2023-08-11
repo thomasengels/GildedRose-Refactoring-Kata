@@ -6,37 +6,15 @@ import lombok.Data;
 @AllArgsConstructor
 @Data
 public class Item {
-
-    String name;
+    Updatable updater;
 
     int sellIn;
-
+    String name;
     int quality;
 
-    void updateQuality(){
-        dayHasPassed();
-        if(this.quality <= 1){
-            quality = 0;
-            return;
-        }
-        if(this.isExpired()){
-            this.quality -= 2;
-        }
-        else {
-            this.quality--;
-        }
-    }
 
-    protected void dayHasPassed() {
-        this.sellIn--;
-    }
-
-    protected boolean isExpired(){
-        return this.sellIn < 0;
-    }
-
-    @Override
-   public String toString() {
-        return this.name + ", " + this.sellIn + ", Quality " + this.quality;
+    public void update(){
+        this.sellIn -= 1;
+        this.quality = this.updater.updateQuality(this.quality, this.sellIn);
     }
 }

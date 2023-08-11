@@ -1,13 +1,12 @@
 package com.gildedrose;
 
-public class AgedBrie extends Item {
-    public AgedBrie(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
-    }
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+public class AgedBrie implements Updatable {
 
     @Override
-    void updateQuality() {
-        this.dayHasPassed();
-        this.quality++;
+    public int updateQuality(int currentQuality, int sellIn) {
+        return ++currentQuality;
     }
 }

@@ -8,15 +8,12 @@ class SulfurasTest {
     @Test
     void qualityIsAlways80(){
         //given
-        Sulfuras sulfuras = new Sulfuras("sulfuras", 10);
-        assertEquals(80, sulfuras.quality);
-        assertEquals(10, sulfuras.sellIn);
+        Sulfuras sulfuras = new Sulfuras();
 
         //when
-        sulfuras.updateQuality();
+        int quality = sulfuras.updateQuality(80, 10);
 
         //then
-        assertEquals(80, sulfuras.quality);
-        assertEquals(10, sulfuras.sellIn);
+        assertEquals(80, quality);
     }
 }
