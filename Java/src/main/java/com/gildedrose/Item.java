@@ -6,11 +6,11 @@ import lombok.Data;
 @AllArgsConstructor
 @Data
 public class Item {
-    Updatable updater;
+    private Updatable updater;
 
-    int sellIn;
-    String name;
-    int quality;
+    private int sellIn;
+    private String name;
+    private int quality;
 
 
     public void update(){

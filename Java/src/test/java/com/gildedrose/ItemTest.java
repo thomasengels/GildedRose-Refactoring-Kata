@@ -18,7 +18,7 @@ class ItemTest {
         item.update();
 
         //then
-        Assertions.assertEquals(9, item.sellIn);
+        Assertions.assertEquals(9, item.getSellIn());
         Mockito.verify(updater, Mockito.times(1)).updateQuality(10, 9);
     }
 }
